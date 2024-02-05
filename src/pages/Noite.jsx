@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Btnesquerdo from "../components/btnesquerdo";
 import Btndireito from "../components/Btndireito";
 import Portaesq from '../components/Portaesq';
 import Portadir from '../components/Portadir';
 import Globais from '../components/Globais';
 import Bateria from '../components/Bateria';
-// import Usando from '../components/usando';
 
 
 function Noite() {
@@ -14,8 +13,8 @@ function Noite() {
       <div className="office1">
         <Btnesquerdo/>
         <Btndireito/>
-        <Portaesq/>
-        <Portadir/>
+        <Portaesq />
+        <Portadir />
         <Bateria/>
       </div>
     )

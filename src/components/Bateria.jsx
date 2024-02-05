@@ -10,14 +10,14 @@ const Bateria = () => {
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setBateria((prevBateria) => prevBateria - (0.05 * Globais.usando))
+            setBateria((prevBateria) => prevBateria - (0.05 * (Globais.usandoesq + Globais.usandodir - 1)))
         }, 450)
 
     }, [])
 
     return (
         <div className="bateria">
-            <h1>{Globais.usando}</h1>
+            <h1>{Globais.usandoesq + Globais.usandodir - 1}</h1>
             <h1>{bateria}%</h1>
         </div>
     );

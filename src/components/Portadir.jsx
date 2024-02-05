@@ -1,30 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Globais from './Globais';
 
 const Portadir = () => {
 
     const [estado, setEstado] = useState('hidden');
     const [porta2, setPorta2] = useState(Globais.porta2)
-    const [usando, setUsando] = useState(Globais.usando)
-    
+    const [usando, setUsando] = useState(Globais.usandodir)
     
     const abrirfechar2 = () => {
       setEstado(estado === 'hidden' ? 'visible' : 'hidden');
-      console.log(estado)
-      
-      setPorta2(!porta2)
-      Globais.porta2 = porta2
-      console.log(Globais.porta2)
-      
-      if(porta2){
-        setUsando((prevUsando) => prevUsando - 1)
-        Globais.usando = usando
-      }
-      else{
-        setUsando((prevUsando) => prevUsando + 1)
-        Globais.usando = usando
-      }
-      console.log(Globais.usando)
+
+      setPorta2((prevPorta2) => {
+        const newUsando = prevPorta2 ? usando - 1 : usando + 1;
+  
+        Globais.porta2 = !prevPorta2;
+        console.log(Globais.porta2);
+  
+        setUsando(newUsando);
+        Globais.usandodir = newUsando;
+  
+        console.log(Globais.usandodir);
+  
+        return !prevPorta2;
+      });
     };
 
     return (

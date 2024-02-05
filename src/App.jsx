@@ -6,6 +6,7 @@ import './App.css'
 import './script'
 import Home from './pages/home'
 import Noite from './pages/Noite';
+import Globais from './components/Globais';
 
 function App() {
 
